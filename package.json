@@ -48,7 +48,7 @@
     "@types/json-schema": "*",
     "@types/react": "*",
     "@babel/runtime-corejs3": "^7.20.7",
-    "ajv": "^6.7.0",
+    "ajv": "^8.17.1",
     "core-js": "^3.0.0",
     "lodash.get": "^4.4.2",
     "lodash.pick": "^4.4.0",
