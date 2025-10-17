@@ -9,7 +9,20 @@ import Form from "../src";
 
 export function createComponent(Component, props) {
   const comp = renderIntoDocument(<Component {...props} />);
-  const node = findDOMNode(comp);
+  let node;
+  try {
+    node = findDOMNode(comp);
+  } catch (e) {
+    // findDOMNode might fail with newer React, try using the component's ref
+    node = comp;
+  }
+  // If node is still null or doesn't have querySelector, create a container
+  if (!node || !node.querySelector) {
+    const container = document.createElement("div");
+    document.body.appendChild(container);
+    render(<Component {...props} />, container);
+    node = container.firstChild || container;
+  }
   return { comp, node };
 }
 

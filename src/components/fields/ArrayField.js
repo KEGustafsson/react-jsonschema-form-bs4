@@ -19,7 +19,7 @@ import {
   toIdSchema,
   getDefaultRegistry,
 } from "../../utils";
-import shortid from "shortid";
+import { nanoid } from "nanoid";
 
 function ArrayFieldTitle({ TitleField, idSchema, title, required }) {
   if (!title) {
@@ -179,7 +179,7 @@ function DefaultNormalArrayFieldTemplate(props) {
 }
 
 function generateRowId() {
-  return shortid.generate();
+  return nanoid();
 }
 
 function generateKeyedFormData(formData) {
@@ -399,7 +399,7 @@ class ArrayField extends Component {
       registry = getDefaultRegistry(),
     } = this.props;
     const { definitions } = registry;
-    if (!schema.hasOwnProperty("items")) {
+    if (!Object.prototype.hasOwnProperty.call(schema, "items")) {
       return (
         <UnsupportedField
           schema={schema}

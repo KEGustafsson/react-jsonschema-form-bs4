@@ -1,0 +1,226 @@
+
+> react-jsonschema-form-bs4@1.8.0 test
+> cross-env NODE_ENV=test mocha --require @babel/register --require ./test/setup-jsdom.js test/**/*_test.js
+
+Warning: componentWillReceiveProps has been renamed, and is not recommended for use. See https://fb.me/react-unsafe-component-lifecycles for details.
+
+* Move data fetching code or side effects to componentDidUpdate.
+* If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://fb.me/react-derived-state
+* Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress this warning in non-strict mode. In React 17.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.
+
+Please update the following components: Form
+
+
+  anyOf
+    ✔ should not render a select element if the anyOf keyword is not present
+Warning: componentWillReceiveProps has been renamed, and is not recommended for use. See https://fb.me/react-unsafe-component-lifecycles for details.
+
+* Move data fetching code or side effects to componentDidUpdate.
+* If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://fb.me/react-derived-state
+* Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress this warning in non-strict mode. In React 17.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.
+
+Please update the following components: AnyOfField
+    ✔ should render a select element if the anyOf keyword is present (58ms)
+    ✔ should assign a default value and set defaults on option change (49ms)
+    ✔ should assign a default value and set defaults on option change with 'type': 'object' missing
+    ✔ should render a custom widget
+    ✔ should change the rendered form when the select value is changed
+    ✔ should handle change events
+    ✔ should clear previous data when changing options
+    ✔ should support options with different types (47ms)
+    ✔ should support custom fields
+    ✔ should select the correct field when the form is rendered from existing data
+    ✔ should select the correct field when the formData property is updated
+    ✔ should not change the selected option when entering values
+    ✔ should not change the selected option when entering values and the subschema uses `anyOf` (44ms)
+    ✔ should not change the selected option when entering values and the subschema uses `allOf`
+    ✔ should not mutate a schema that contains nested anyOf and allOf
+    Arrays
+      ✔ should correctly render form inputs for anyOf inside array items (54ms)
+      ✔ should correctly render mixed types for anyOf inside array items (39ms)
+
+  ArrayField
+    Unsupported array schema
+      ✔ should warn on missing items descriptor
+    List of inputs
+      ✔ should render a fieldset
+      ✔ should render a fieldset legend
+      ✔ should render a description
+      ✔ should render a hidden list
+      ✔ should render a customized title
+      ✔ should render a customized description
+      ✔ should render a customized file widget
+      ✔ should pass rawErrors down to custom array field templates (44ms)
+      ✔ should contain no field in the list by default
+      ✔ should have an add button
+      ✔ should not have an add button if addable is false
+      ✔ should add a new field when clicking the add button
+      ✔ should assign new keys/ids when clicking the add button
+      ✔ should not provide an add button if length equals maxItems
+      ✔ should provide an add button if length is lesser than maxItems
+      1) should retain existing row keys/ids when adding new row
+      ✔ should not provide an add button if addable is expliclty false regardless maxItems value
+      ✔ should ignore addable value if maxItems constraint is not satisfied
+      ✔ should mark a non-null array item widget as required
+      ✔ should fill an array field with data
+      ✔ should't have reorder buttons when list length <= 1
+      ✔ should have reorder buttons when list length >= 2
+      ✔ should move down a field from the list (43ms)
+      ✔ should move up a field from the list
+      ✔ should retain row keys/ids when moving down
+      ✔ should retain row keys/ids when moving up
+      ✔ should move from first to last in the list
+      ✔ should disable move buttons on the ends of the list
+      ✔ should not show move up/down buttons if orderable is false
+      ✔ should remove a field from the list (40ms)
+      2) should retain row keys/ids of remaining rows when a row is removed
+      ✔ should not show remove button if removable is false
+      3) should force revalidation when a field is removed
+      4) should handle cleared field values in the array
+      5) should render the input widgets with the expected ids
+      6) should render nested input widgets with the expected ids
+      7) should render enough inputs with proper defaults to match minItems in schema when no formData is set
+      8) should render an input for each default value, even when this is greater than minItems
+      9) should render enough input to match minItems, populating the first with default values, and the rest empty
+      10) should render enough input to match minItems, populating the first with default values, and the rest with the item default
+      11) should not add minItems extra formData entries when schema item is a multiselect
+      ✔ should honor given formData, even when it does not meet ths minItems-requirement
+      12) should honor given formData, even when it does not meet ths minItems-requirement
+
+
+  50 passing (1s)
+  12 failing
+
+  1) ArrayField
+       List of inputs
+         should retain existing row keys/ids when adding new row:
+
+      AssertionError: expected 'Fl2KPZ1MkSnnwpQHvl-CS' to equal 'CHa_aFMcgRbJXqiSGec3F'
+      + expected - actual
+
+      -Fl2KPZ1MkSnnwpQHvl-CS
+      +CHa_aFMcgRbJXqiSGec3F
+      
+      at Context.<anonymous> (test\/ArrayField_test.js:272:32)
+      at processImmediate (node:internal/timers:505:21)
+
+  2) ArrayField
+       List of inputs
+         should retain row keys/ids of remaining rows when a row is removed:
+
+      AssertionError: expected 'CzDEp-Yth0eBAdeQ1sqXZ' to equal '2CYGXLl0s-WmJ46hye-La'
+      + expected - actual
+
+      -CzDEp-Yth0eBAdeQ1sqXZ
+      +2CYGXLl0s-WmJ46hye-La
+      
+      at Context.<anonymous> (test\/ArrayField_test.js:557:32)
+      at processImmediate (node:internal/timers:505:21)
+
+  3) ArrayField
+       List of inputs
+         should force revalidation when a field is removed:
+     AssertionError: expected { '0': <li class="text-danger">should NOT be shorter than 4 characters</li>,
+  item: [Function: item],
+  length: [Getter],
+  keys: [Function: keys],
+  values: [Function: values],
+  entries: [Function: entries],
+  forEach: [Function: forEach] } to have a length of 0 but got 1
+      at Context.<anonymous> (test\/ArrayField_test.js:598:24)
+      at processImmediate (node:internal/timers:505:21)
+
+  4) ArrayField
+       List of inputs
+         should handle cleared field values in the array:
+     TypeError: Cannot read properties of null (reading '__reactInternalInstance$u9lzba6cnh')
+      at getInstanceFromNode$1 (node_modules\react-dom\cjs\react-dom.development.js:7922:18)
+      at Object.change (node_modules\react-dom\cjs\react-dom-test-utils.development.js:1392:22)
+      at Context.<anonymous> (test\/ArrayField_test.js:613:16)
+      at processImmediate (node:internal/timers:505:21)
+
+  5) ArrayField
+       List of inputs
+         should render the input widgets with the expected ids:
+     TypeError: Cannot read properties of undefined (reading 'id')
+      at Context.<anonymous> (test\/ArrayField_test.js:628:24)
+      at processImmediate (node:internal/timers:505:21)
+
+  6) ArrayField
+       List of inputs
+         should render nested input widgets with the expected ids:
+     TypeError: Cannot read properties of undefined (reading 'id')
+      at Context.<anonymous> (test\/ArrayField_test.js:656:24)
+      at processImmediate (node:internal/timers:505:21)
+
+  7) ArrayField
+       List of inputs
+         should render enough inputs with proper defaults to match minItems in schema when no formData is set:
+     TypeError: Cannot read properties of undefined (reading 'value')
+      at Context.<anonymous> (test\/ArrayField_test.js:691:24)
+      at processImmediate (node:internal/timers:505:21)
+
+  8) ArrayField
+       List of inputs
+         should render an input for each default value, even when this is greater than minItems:
+
+      AssertionError: expected 0 to deeply equal 4
+      + expected - actual
+
+      -0
+      +4
+      
+      at Context.<anonymous> (test\/ArrayField_test.js:711:32)
+      at processImmediate (node:internal/timers:505:21)
+
+  9) ArrayField
+       List of inputs
+         should render enough input to match minItems, populating the first with default values, and the rest empty:
+
+      AssertionError: expected 0 to deeply equal 4
+      + expected - actual
+
+      -0
+      +4
+      
+      at Context.<anonymous> (test\/ArrayField_test.js:734:32)
+      at processImmediate (node:internal/timers:505:21)
+
+  10) ArrayField
+       List of inputs
+         should render enough input to match minItems, populating the first with default values, and the rest with the item default:
+
+      AssertionError: expected 0 to deeply equal 4
+      + expected - actual
+
+      -0
+      +4
+      
+      at Context.<anonymous> (test\/ArrayField_test.js:758:32)
+      at processImmediate (node:internal/timers:505:21)
+
+  11) ArrayField
+       List of inputs
+         should not add minItems extra formData entries when schema item is a multiselect:
+     TypeError: Cannot read properties of null (reading 'state')
+      at Context.<anonymous> (test\/ArrayField_test.js:792:19)
+      at processImmediate (node:internal/timers:505:21)
+
+  12) ArrayField
+       List of inputs
+         should honor given formData, even when it does not meet ths minItems-requirement:
+     Uncaught Error: Should not already be working.
+      at performSyncWorkOnRoot (node_modules\react-dom\cjs\react-dom.development.js:21733:13)
+      at c:\Git_GitHub\KG\react-jsonschema-form-bs4\node_modules\react-dom\cjs\react-dom.development.js:11089:24
+      at unstable_runWithPriority (node_modules\scheduler\cjs\scheduler.development.js:653:12)
+      at runWithPriority$1 (node_modules\react-dom\cjs\react-dom.development.js:11039:10)
+      at flushSyncCallbackQueueImpl (node_modules\react-dom\cjs\react-dom.development.js:11084:7)
+      at workLoop (node_modules\scheduler\cjs\scheduler.development.js:597:34)
+      at flushWork (node_modules\scheduler\cjs\scheduler.development.js:552:16)
+      at MessagePort.performWorkUntilDeadline (node_modules\scheduler\cjs\scheduler.development.js:164:27)
+      at MessagePort.eventHandler (node:internal/event_target:1132:12)
+      at MessagePort.[nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+      at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+
+
+

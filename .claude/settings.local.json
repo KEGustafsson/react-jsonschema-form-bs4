@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm audit:*)",
+      "Bash(npm i:*)",
+      "Bash(npm install --save-dev nyc@latest --ignore-scripts)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:lib:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run build:dist:*)",
+      "Bash(findstr:*)",
+      "Bash(find:*)",
+      "Bash(awk:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run lint)",
+      "Bash(npx eslint:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
